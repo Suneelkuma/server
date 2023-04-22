@@ -6,16 +6,18 @@ const cookieparser=require("cookie-parser")
 // const registerRoutes=require('./routes/auth')
 dotenv.config({path:'./config.env'});
 
-
+app.use(express.json())
 app.use(cookieparser())
 require('./db/conn')
 const PORT=process.env.PORT;
 
 
+
+app.use(require('./routes/auth'))
 app.get("/", (req, res) => {
     res.send("ok");
   });
-  
+  app.use(require("./routes/data"))
   // app.get("/about", middleware, (req, res) => {
   //   res.send("Hello I am about page");
   // });
