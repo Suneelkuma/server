@@ -83,6 +83,9 @@ console.log(token);
 })
 
 
+router.get("/about", middleware, (req, res) => {
+    res.send(req.rootUser);
+  });
 
 
   // contactus
