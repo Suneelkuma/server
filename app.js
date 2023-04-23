@@ -14,6 +14,10 @@ const PORT=process.env.PORT;
 
 
 app.use(require('./routes/auth'))
+
+app.use(require('./routes/company'))
+app.use(require('./routes/data'))
+app.use(require('./routes/searchRoutes'))
 app.get("/", (req, res) => {
     res.send("ok");
   });
